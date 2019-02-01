@@ -4,7 +4,10 @@
       {% if site.copyright %}
         {{ site.copyright | markdownify }}
       {% else %}
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}.</p>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. Licensed under Creative Commons BY-NC-SA. 
+          <a href="https://github.com/mmistakes/jekyll-theme-basically-basic">Basically Basic</a> Jekyll theme.
+          Edited on <a href="https://www.gnu.org/software/emacs/">Emacs</a>.
+        </p>
       {% endif %}
     </div>
   </div>

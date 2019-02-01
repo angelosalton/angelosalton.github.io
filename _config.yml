@@ -18,7 +18,8 @@ title: Angelo Salton
 email: gsalton4@hotmail.com
 description: "Página pessoal"
 baseurl: ""  # the subpath of your site, e.g. /blog
-url: ""  # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://angelosalton.github.io"  # the base hostname & protocol for your site, e.g. http://example.com
+google_analytics: UA-83226740-2
 author:
   name: Angelo Salton
   picture: "/assets/images/bio.png"
@@ -40,6 +41,10 @@ algolia:
 # Liquid
 liquid:
   error_mode: strict
+
+# Comments
+disqus:
+  shortname: angelo-salton-site-pessoal
 
 # Build settings
 markdown: kramdown

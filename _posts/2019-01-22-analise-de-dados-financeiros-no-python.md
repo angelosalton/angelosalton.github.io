@@ -161,31 +161,31 @@ df.head()
 
 Agora, vamos calcular faturamentos, custos e descontos totais, bem como os lucros de produto, frete e o lucro líquido:
 
-$F_{bruto} = F_{produto} + F_{frete}$ (faturamentos)
+$$F_{bruto} = F_{produto} + F_{frete}$$ (faturamentos)
 
-$C_{total} = C_{produto} + C_{frete} + C_{mkt}$ (custos)
+$$C_{total} = C_{produto} + C_{frete} + C_{mkt}$$ (custos)
 
-$D_{total} = D_{produto} + D_{frete}$ (descontos)
+$$D_{total} = D_{produto} + D_{frete}$$ (descontos)
 
 Os lucros:
 
-$L_{produto} = F_{produto} - C_{produto} - D_{produto}$ (produto)
+$$L_{produto} = F_{produto} - C_{produto} - D_{produto}$$ (produto)
 
-$L_{frete} = F_{frete} - C_{frete} - D_{frete}$ (fretes)
+$$L_{frete} = F_{frete} - C_{frete} - D_{frete}$$ (fretes)
 
-$L_{liquido} = F_{bruto} - C_{total} - D_{total}$ (líquido)
+$$L_{liquido} = F_{bruto} - C_{total} - D_{total}$$ (líquido)
 
 A seguir, calcula-se o custo marginal (o custo de se ofertar uma unidade a mais) dos itens pela relação:
 
-$C_{marginal} = \frac{C_{total}}{\textrm{Vendas}}$
+$$C_{marginal} = \frac{C_{total}}{\textrm{Vendas}}$$
 
 Podemos inferir o preço médio praticado, através da razão entre o faturamento bruto e as quantidades vendidas:
 
-$P_{médio} = \frac{F_{bruto}}{\textrm{Vendas}}$
+$$P_{médio} = \frac{F_{bruto}}{\textrm{Vendas}}$$
 
 Agora, sabendo o custo marginal e o preço dos itens, podemos calcular as margens de lucro (_mark-ups_) em porcentagem:
 
-$M = \frac{P_{médio}-C_{marginal}}{P_{médio}} * 100$
+$$M = \frac{P_{médio}-C_{marginal}}{P_{médio}} * 100$$
 
 
 ```python
@@ -299,7 +299,7 @@ temp.plot(title='Resultados da empresa (R$ mil)')
 ![png](/assets/images/testeb2/output_8_1.png)
 
 
-Em junho, a empresa apresentou lucro líquido de R\\$ 551 mil, seguido de prejuízos em julho (-R\\$ 934 mil) e agosto (-R\\$ 113 mil), para uma recuperação no mês de setembro (R\\$ 667 mil). O resultado agregado no período foi positivo (R\\$ 171 mil).
+Em junho, a empresa apresentou lucro líquido de R$ 551 mil, seguido de prejuízos em julho (-R$ 934 mil) e agosto (-R$ 113 mil), para uma recuperação no mês de setembro (R$ 667 mil). O resultado agregado no período foi positivo (R$ 171 mil).
 
 Agora, vamos ver quais são os departamentos com maior faturamento e lucro, no somatório dos meses observados e dos produtos:
 
@@ -1220,7 +1220,7 @@ temp.drop(['Vendas','Preco_Medio'], axis=1)
 
 Agora, podemos dividir os descontos por itens pelo respectivo volume de vendas, para descobrir qual têm sido o desconto necessário para vender uma unidade adicional de algum item, descritos pelas colunas `DescProd_Vendas`, `DescFret_Vendas` e `DescTot_Vendas`, que representam os descontos de produto, frete e total divididos pelas vendas, respectivamente. É possível ainda obter os descontos no preço médio dos itens em porcentagens através da relação:
 
-$ \textrm{Desconto no preço} = \frac{\textrm{DescTot_Vendas}}{P_{médio}} * 100 $
+$$ \textrm{Desconto no preço} = \frac{\textrm{DescTot_Vendas}}{P_{médio}} * 100 $$
 
 
 ```python
@@ -1316,7 +1316,7 @@ De acordo com a tabela, ao longo dos meses de junho a setembro as visitas se man
 
 Podemos calcular a taxa de conversão dos itens através da relação:
 
-$\textrm{Taxa de conversão} = \frac{\textrm{Vendas}}{\textrm{Visitas}} * 100$
+$$\textrm{Taxa de conversão} = \frac{\textrm{Vendas}}{\textrm{Visitas}} * 100$$
 
 
 ```python
@@ -1342,9 +1342,9 @@ Descobrimos que existe uma grande variabilidade entre os itens. No departamento 
 
 Sabe-se que os dispêndios com marketing objetivam ampliar as vendas dos itens oferecidos. Na tabela a seguir, calculamos a participação do custo médio de marketing no preço médio dos itens, calculando o gasto médio por item em marketing (representado pela coluna `Custo_Mkt_Vendas`), e em seguida a participação desse custo no preço médio dos itens, através das relações:
 
-$\textrm{Custo_Mkt_Vendas} = \frac{C_{mkt}}{\textrm{Vendas}}$
+$$\textrm{Custo_Mkt_Vendas} = \frac{C_{mkt}}{\textrm{Vendas}}$$
 
-$\textrm{Custo_Mkt_Preço} = \frac{\textrm{Custo_Mkt_Vendas}}{P_{médio}}$
+$$\textrm{Custo_Mkt_Preço} = \frac{\textrm{Custo_Mkt_Vendas}}{P_{médio}}$$
 
 
 ```python
@@ -1793,7 +1793,7 @@ temp
 
 
 
-Aqui emergem as diferenças de desempenho dos departamentos, nas diferentes localidades. Em Pernambuco, novamente o departamento de bolas de gude se destaca, bem como um desempenho no departamento de cadeiras melhor do que no Mato Grosso. O estado de São Paulo, dotado de um grande mercado consumidor, vendeu quase o mesmo em máquinas fotográficas que nos dois outros estados, para um lucro de quase R\\$ 500 mil. Ademais, novamente mostra seu potencial no departamento de cadeiras.
+Aqui emergem as diferenças de desempenho dos departamentos, nas diferentes localidades. Em Pernambuco, novamente o departamento de bolas de gude se destaca, bem como um desempenho no departamento de cadeiras melhor do que no Mato Grosso. O estado de São Paulo, dotado de um grande mercado consumidor, vendeu quase o mesmo em máquinas fotográficas que nos dois outros estados, para um lucro de quase R$ 500 mil. Ademais, novamente mostra seu potencial no departamento de cadeiras.
 
 É intuitivo imaginar que a rentabilidade dos fretes sejam sensíveis à localização dos consumidores. Seguem os resultados do lucro médio dos fretes em cada região e departamento, dividido pelas vendas:
 

@@ -3,6 +3,7 @@ author: Angelo Salton
 title: Alterar variáveis de acordo com condições no R
 tags:
   - R
+comments: true
 ---
 
 Para gerar ou alterar condicionalmente valores de variáveis no R, comumente usamos a notação de linhas e colunas de um `data.frame`:
