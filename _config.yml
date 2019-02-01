@@ -13,18 +13,16 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-lang: en-US
-title: Basically Basic
-email: dugan.nash@mailinator.com
-description: "Your new default Jekyll theme"
-baseurl: "/example"  # the subpath of your site, e.g. /blog
+lang: pt-BR
+title: Angelo Salton
+email: gsalton4@hotmail.com
+description: "Página pessoal"
+baseurl: ""  # the subpath of your site, e.g. /blog
 url: ""  # the base hostname & protocol for your site, e.g. http://example.com
 author:
-  name: Dugan Nash
-  twitter: Towlette_Pettetucci
+  name: Angelo Salton
   picture: https://api.adorable.io/avatars/285/johndoe.png
-twitter_username: Towlette_Pettetucci
-github_username: Towlette_Pettetucci
+github_username: angelosalton
 logo: /assets/icons/basically-basic-logo-light.svg
 search: true
 search_full_content: true
@@ -41,7 +39,7 @@ liquid:
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-basically-basic
+remote_theme: "mmistakes/jekyll-theme-basically-basic"
 plugins: # previously gems
   - jekyll-feed
   - jekyll-seo-tag
