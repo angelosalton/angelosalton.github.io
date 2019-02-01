@@ -21,9 +21,13 @@ baseurl: ""  # the subpath of your site, e.g. /blog
 url: ""  # the base hostname & protocol for your site, e.g. http://example.com
 author:
   name: Angelo Salton
-  picture: https://api.adorable.io/avatars/285/johndoe.png
+  picture: "/assets/images/bio.png"
 github_username: angelosalton
-logo: /assets/icons/basically-basic-logo-light.svg
+linkedin_username: angelo-salton
+soundcloud_username: salton1
+instagram_username: salton.a
+
+#logo: /assets/icons/basically-basic-logo-light.svg
 search: true
 search_full_content: true
 search_provider: algolia
@@ -39,7 +43,8 @@ liquid:
 
 # Build settings
 markdown: kramdown
-remote_theme: "mmistakes/jekyll-theme-basically-basic"
+theme: "jekyll-theme-basically-basic"
+#remote_theme: "mmistakes/jekyll-theme-basically-basic"
 plugins: # previously gems
   - jekyll-feed
   - jekyll-seo-tag
@@ -66,9 +71,12 @@ paginate_path: /page:num/
 
 # Collections
 collections:
-  recipes:
+  arquivos:
     output: true
     permalink: /:collection/:path/
+  recipes:
+    output: true
+    permalink: /:collection/:path/  
 
 # Front Matter Defaults
 defaults:
@@ -86,3 +94,9 @@ defaults:
     values:
       layout: post
       read_time: true
+  - scope:
+      path: "_arquivos"
+      type: arquivos
+    values:
+      layout: post
+      read_time: true      

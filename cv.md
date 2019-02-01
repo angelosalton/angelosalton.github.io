@@ -1,8 +1,8 @@
 ---
-title: Curriculum Vitæ
-layout: cv
+title: Curriculum
+#layout: cv
 actions:
   - label: "Download as PDF"
     icon: pdf
-    url: "#pdf-asset"
+    url: "/assets/files/pdf/cv.pdf"
 ---

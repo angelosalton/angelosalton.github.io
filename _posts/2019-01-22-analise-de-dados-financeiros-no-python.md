@@ -296,7 +296,7 @@ temp.plot(title='Resultados da empresa (R$ mil)')
 
 
 
-![png](/img/testeb2/output_8_1.png)
+![png](/assets/images/testeb2/output_8_1.png)
 
 
 Em junho, a empresa apresentou lucro líquido de R\\$ 551 mil, seguido de prejuízos em julho (-R\\$ 934 mil) e agosto (-R\\$ 113 mil), para uma recuperação no mês de setembro (R\\$ 667 mil). O resultado agregado no período foi positivo (R\\$ 171 mil).
@@ -575,7 +575,7 @@ temp2['Faturamento_Bruto'].plot(title='Faturamento Bruto (var. %)')
 
 
 
-![png](/img/testeb2/output_16_1.png)
+![png](/assets/images/testeb2/output_16_1.png)
 
 
 
@@ -591,7 +591,7 @@ temp2['Lucro_Liquido'].plot(title='Lucro Líquido (var. %)')
 
 
 
-![png](/img/testeb2/output_17_1.png)
+![png](/assets/images/testeb2/output_17_1.png)
 
 
 Vamos analisar agora quais os itens mais rentáveis, em termos de lucro total ao longo do período:
@@ -822,7 +822,7 @@ df.groupby(['Mes','Departamento'])['Markup'].agg(['mean']).unstack().plot(title=
 
 
 
-![png](/img/testeb2/output_23_1.png)
+![png](/assets/images/testeb2/output_23_1.png)
 
 
 ## Estrutura de custos
@@ -845,7 +845,7 @@ temp.mean().plot(kind='line')
 
 
 
-![png](/img/testeb2/output_25_1.png)
+![png](/assets/images/testeb2/output_25_1.png)
 
 
 
@@ -1241,7 +1241,7 @@ temp.set_index(['Departamento','Item']).plot(y='Desconto_no_preco', kind='bar', 
 
 
 
-![png](/img/testeb2/output_33_1.png)
+![png](/assets/images/testeb2/output_33_1.png)
 
 
 De acordo com os dados observados, os descontos no departamento de bolas de gude giram em torno de 5%, com praticamente nenhuma diferenciação entre os itens. O departamento de cadeiras tem uma política de descontos mais agressiva, com descontos de 17% em média. Neste departamento existe uma diferenciação maior entre os itens, sendo que o item 3 foi o que acumulou mais descontos (18,5%). No departamento de máquinas fotográficas, os descontos médios estão na faixa de 8,5%, sendo o item 1 o que recebeu mais descontos totais (aprox. 9,5%). Precisamos ver o volume de vendas de cada item para saber se os descontos estão sendo bem aplicados.
@@ -1335,7 +1335,7 @@ temp['Taxa de conversão'].plot(kind='bar', title='Taxa de conversão (%)')
 
 
 
-![png](/img/testeb2/output_38_1.png)
+![png](/assets/images/testeb2/output_38_1.png)
 
 
 Descobrimos que existe uma grande variabilidade entre os itens. No departamento de bolas de gude, o item 1 é o que possui a maior taxa de conversão (requer o menor número de visitas por venda) bem como o item 1 do setor de Cadeiras e o item 1 do setor de máquinas fotográficas. Estratégias de marketing que busquem aumentar a frequência dos consumidores na web podem focar nesses itens, pois requerem o menor investimento para alavancar vendas.
@@ -1464,7 +1464,7 @@ temp.unstack()['Custo_Mkt_Preço'].plot(kind='bar', title='Custos de marketing e
 
 
 
-![png](/img/testeb2/output_41_1.png)
+![png](/assets/images/testeb2/output_41_1.png)
 
 
 A partir dos dados calculados, vemos que no departamento de bolas de gude os gastos com marketing chegam ao redor de 10,5% em média. No departamento de cadeiras, esse número alcança aproximadamente 12%. O item 1 recebe o maior gasto em marketing (14,4%). O departamento de máquinas fotográficas é o que possui os menores gastos médios (4,5%).

@@ -9,16 +9,16 @@ t:
   skip_footer: "Skip to footer"
   menu: "Menu"
   home: "Home"
-  newer: "Newer"
-  older: "Older"
+  newer: "Mais novas"
+  older: "Mais antigas"
   email: "Email"
-  subscribe: "Subscribe"
-  read_more: "Read More"
+  subscribe: "Inscreva-se"
+  read_more: "Leia mais"
   posts: "Posts"
-  page: "Page"
-  of: "of"
-  min_read: "min read"
-  present: "Present"
+  page: "Página"
+  of: "de"
+  min_read: "min. de leitura"
+  present: "Atual"
 
 # Google Fonts
 google_fonts:
@@ -30,9 +30,9 @@ google_fonts:
 # pages that have a `title`. Add raw page paths in the order you'd like.
 
 navigation_pages:
-  - posts.md
-  - recipes.md
   - about.md
+  - arquivos.md
   - cv.md
+  - posts.md
   - tags.md
   - categories.md

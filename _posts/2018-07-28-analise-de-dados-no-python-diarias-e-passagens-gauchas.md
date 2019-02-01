@@ -748,7 +748,7 @@ y.unstack().plot(kind='line', subplots=False)
 
 
 
-![png](output_34_1.png)
+![png](/assets/images/output_34_1.png)
 
 
 Até aqui exploramos os gastos em termos de valores. Vamos agora para a frequência das requisições de diárias! Os dados disponibilizados pelo Portal da Transparência informam as datas iniciais e finais associadas à cada empenho (nas variáveis ``DataInicio`` e ``DataFim``) bem como a quantidade de diárias pagas (nas variáveis ``Quantidade`` e ``QuantidadeMeia``). Meias diárias são pagas quando não há pernoite do servidor.

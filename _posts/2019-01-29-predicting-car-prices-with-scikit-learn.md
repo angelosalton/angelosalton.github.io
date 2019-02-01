@@ -1305,7 +1305,7 @@ sns.heatmap(df.corr().round(2), annot=True)
 
 
 
-![png](/img/mlcars/output_45_1.png)
+![png](/assets/images/mlcars/output_45_1.png)
 
 
 The most popular cars announced and the average price:
@@ -1564,7 +1564,7 @@ df.pivot_table(index=['brand'], values=['price'], aggfunc=np.mean).round(2).sort
 
 
 
-![png](/img/mlcars/output_51_1.png)
+![png](/assets/images/mlcars/output_51_1.png)
 
 
 How cars are located geographically:
@@ -1597,7 +1597,7 @@ ax.scatter(df.location_longitude, df.location_latitude, marker='.', c='green', z
 
 
 
-![png](/img/mlcars/output_53_1.png)
+![png](/assets/images/mlcars/output_53_1.png)
 
 
 The relationship between continuous features are key in our dataset. Are they linear? This is important as most models assume a linear relationship between features and the target.
@@ -1619,7 +1619,7 @@ sns.pairplot(df[['price','kilometers','engine_displacement','vehicle_year']], di
 
 
 
-![png](/img/mlcars/output_55_2.png)
+![png](/assets/images/mlcars/output_55_2.png)
 
 
 # Model tests
@@ -1751,7 +1751,7 @@ ax3.set_ylabel('Median absolute error')
 
 
 
-![png](/img/mlcars/output_66_1.png)
+![png](/assets/images/mlcars/output_66_1.png)
 
 
 All model scores are calculated using regression residuals, so they are correlated. The $R^2$ score in most models performed at around 0.8, except the elastic net model, which peaked at 0.5 in the training set. Gradient boosting, random forest and extra trees had the best scores. However, $R^2$ scores should be taken with precaution as they are biased towards larger models. Mean squared error (MSE) is a metric that penalizes larger prediction errors. Last are the median absolute error (MAE). Absolute error measures are interesting because they inform average deviations in terms of our target (predicted car prices, in our case).
@@ -1966,7 +1966,7 @@ plt.legend(['Train score','Test score'])
 
 
 
-![png](/img/mlcars/output_79_1.png)
+![png](/assets/images/mlcars/output_79_1.png)
 
 
 The learning curve tells us that our model performs much better in training than in test data, although both scores improve as we add samples. Intuitively, this means that the model struggles to generalize to new, unknown cases. Improvements can be made in the following senses:

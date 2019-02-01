@@ -1,14 +1,19 @@
 ---
-title: "About"
+title: "Sobre"
 layout: about
 ---
 
-Basically Basic is a [Jekyll theme](https://jekyllrb.com/docs/themes/) meant as a substitute for the default --- [Minima](https://github.com/jekyll/minima). Conventions and features found there are fully supported by **Basically Basic**, with a few enhancements thrown in for good measure:
+## Formação
 
-- Clean responsive design with [six customizable skins](#skin)
-- Curriculum Vitæ/Resume layout powered by [JSON data](http://registry.jsonresume.org/)
-- About page layout
-- Disqus Comments and Google Analytics support
-- SEO best practices via [Jekyll SEO Tag](https://github.com/jekyll/jekyll-seo-tag/)
+- Doutorando em Economia Aplicada pela Universidade Federal de Viçosa.
+- Bacharel em Ciências Econômicas e Mestre em Economia Aplicada pela Universidade Federal de Pelotas.
 
-You can find the source code for this theme at: {% include icon-github.html username="mmistakes" %}/[jekyll-theme-basically-basic](https://github.com/mmistakes/jekyll-theme-basically-basic)
+## Perfis
+
+[Plataforma Lattes](http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8169229J5)
+
+[Google Acadêmico](https://scholar.google.com.br/citations?user=g_Z02F8AAAAJ&hl=pt-BR)
+
+[ORCID](https://orcid.org/0000-0002-8378-1716)
+
+[RePEc](https://ideas.repec.org/f/psa1585.html)

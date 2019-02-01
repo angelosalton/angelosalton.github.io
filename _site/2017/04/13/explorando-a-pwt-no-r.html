@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--
+    Basically Basic Jekyll Theme 1.4.1
+    Copyright 2017-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/jekyll-basically-theme/blob/master/LICENSE
+-->
+<html lang="pt-BR" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Explorando a Penn World Table com R e shiny | Angelo Salton</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Explorando a Penn World Table com R e shiny" />
+<meta name="author" content="Angelo Salton" />
+<meta property="og:locale" content="pt_BR" />
+<meta name="description" content="A Penn World Table é uma base de dados que contém variáveis relevantes de desenvolvimento econômico para países ao redor do mundo. Esse post apresenta uma construção em shiny, um pacote que possibilita desenvolver aplicações web a partir do R. O objetivo foi montar uma ferramenta para comparar países visualmente, com dados anuais de 1980 a 2014." />
+<meta property="og:description" content="A Penn World Table é uma base de dados que contém variáveis relevantes de desenvolvimento econômico para países ao redor do mundo. Esse post apresenta uma construção em shiny, um pacote que possibilita desenvolver aplicações web a partir do R. O objetivo foi montar uma ferramenta para comparar países visualmente, com dados anuais de 1980 a 2014." />
+<link rel="canonical" href="http://localhost:4000/2017/04/13/explorando-a-pwt-no-r.html" />
+<meta property="og:url" content="http://localhost:4000/2017/04/13/explorando-a-pwt-no-r.html" />
+<meta property="og:site_name" content="Angelo Salton" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-04-13T00:00:00+00:00" />
+<script type="application/ld+json">
+{"dateModified":"2017-04-13T00:00:00+00:00","datePublished":"2017-04-13T00:00:00+00:00","@type":"BlogPosting","headline":"Explorando a Penn World Table com R e shiny","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/04/13/explorando-a-pwt-no-r.html"},"url":"http://localhost:4000/2017/04/13/explorando-a-pwt-no-r.html","author":{"@type":"Person","name":"Angelo Salton"},"description":"A Penn World Table é uma base de dados que contém variáveis relevantes de desenvolvimento econômico para países ao redor do mundo. Esse post apresenta uma construção em shiny, um pacote que possibilita desenvolver aplicações web a partir do R. O objetivo foi montar uma ferramenta para comparar países visualmente, com dados anuais de 1980 a 2014.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/stylesheets/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,600,600i">
+  
+
+  
+    
+    <link rel="alternate" type="application/atom+xml" title="Angelo Salton" href="/atom.xml">
+  
+</head>
+
+
+  <body class="layout--post explorando-a-penn-world-table-com-r-e-shiny">
+
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+
+    <div class="sidebar-toggle-wrapper">
+      
+        <button class="search-toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <title>Search</title>
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+      
+
+      <button class="toggle navicon-button larr" type="button">
+        <span class="toggle-inner">
+          <span class="sidebar-toggle-label visually-hidden">Menu</span>
+          <span class="navicon"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+      <div class="inner">
+        <nav id="primary-nav" class="site-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
+  <ul id="menu-main-navigation" class="menu">
+    <!-- Home link -->
+    <li class="menu-item">
+      <a href="/" itemprop="url">
+        <span itemprop="name">Home</span>
+      </a>
+    </li>
+
+    <!-- site.pages links -->
+    
+    
+
+    
+      
+      
+        <li class="menu-item">
+          <a href="/about.html" itemprop="url">
+            <span itemprop="name">Sobre</span>
+          </a>
+        </li>
+      
+    
+      
+      
+        <li class="menu-item">
+          <a href="/arquivos/" itemprop="url">
+            <span itemprop="name">Arquivos</span>
+          </a>
+        </li>
+      
+    
+      
+      
+        <li class="menu-item">
+          <a href="/cv.html" itemprop="url">
+            <span itemprop="name">Curriculum</span>
+          </a>
+        </li>
+      
+    
+      
+      
+        <li class="menu-item">
+          <a href="/posts/" itemprop="url">
+            <span itemprop="name">Posts</span>
+          </a>
+        </li>
+      
+    
+      
+      
+        <li class="menu-item">
+          <a href="/tags/" itemprop="url">
+            <span itemprop="name">Tags</span>
+          </a>
+        </li>
+      
+    
+      
+      
+    
+  </ul>
+</nav>
+
+        <ul class="contact-list">
+  
+    <li>
+      <a href="mailto:gsalton4@hotmail.com">
+        <span class="icon icon--email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="313.1 3.7 16 16"><path d="M318.5 8.9c0-.2.2-.4.4-.4h4.5c.2 0 .4.2.4.4s-.2.4-.4.4h-4.5c-.3 0-.4-.2-.4-.4zm.4 2.1h4.5c.2 0 .4-.2.4-.4s-.2-.4-.4-.4h-4.5c-.2 0-.4.2-.4.4s.1.4.4.4zm3.5 1.2c0-.2-.2-.4-.4-.4h-3.1c-.2 0-.4.2-.4.4s.2.4.4.4h3.1c.2.1.4-.1.4-.4zm-1.5-8.4l-1.7 1.4c-.2.1-.2.4 0 .6s.4.2.6 0l1.4-1.2 1.4 1.2c.2.1.4.1.6 0s.1-.4 0-.6l-1.7-1.4c-.3-.1-.5-.1-.6 0zm7.8 6.2c.1.1.1.2.1.3v7.9c0 .8-.7 1.5-1.5 1.5h-12.5c-.8 0-1.5-.7-1.5-1.5v-7.9c0-.1.1-.2.1-.3l1.6-1.3c.2-.1.4-.1.6 0s.1.4 0 .6l-1.2 1 1.8 1.3v-4c0-.6.5-1.1 1.1-1.1h7.5c.6 0 1.1.5 1.1 1.1v4l1.8-1.3-1.2-1c-.2-.1-.2-.4 0-.6s.4-.2.6 0l1.6 1.3zm-11.6 2.2l4 2.8 4-2.8V7.6c0-.1-.1-.2-.2-.2h-7.5c-.1 0-.2.1-.2.2v4.6zm10.9-1l-4.7 3.4 3.4 2.6c.2.1.2.4.1.6-.1.2-.4.2-.6.1l-3.6-2.8-1.2.8c-.1.1-.3.1-.5 0l-1.2-.8-3.6 2.8c-.2.1-.4.1-.6-.1-.1-.2-.1-.4.1-.6l3.4-2.6-4.7-3.4v7.1c0 .4.3.6.6.6h12.5c.4 0 .6-.3.6-.6v-7.1z"/></svg></span>
+        <span class="label">Email</span>
+      </a>
+    </li>
+  
+
+  
+    <li><a href="https://github.com/angelosalton">
+  <span class="icon icon--github"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M8 0C3.58 0 0 3.582 0 8c0 3.535 2.292 6.533 5.47 7.59.4.075.547-.172.547-.385 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.09-.202-.36-1.015.07-2.117 0 0 .67-.215 2.2.82.64-.178 1.32-.266 2-.27.68.004 1.36.092 2 .27 1.52-1.035 2.19-.82 2.19-.82.43 1.102.16 1.915.08 2.117.51.56.82 1.274.82 2.147 0 3.073-1.87 3.75-3.65 3.947.28.24.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.14.46.55.38C13.71 14.53 16 11.53 16 8c0-4.418-3.582-8-8-8"/></svg></span>
+  <span class="label">GitHub</span>
+</a>
+</li>
+  
+
+  
+
+  <li>
+    
+      <a href="/atom.xml" title="Atom Feed">
+        <span class="icon icon--rss"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/></svg></span>
+        <span class="label">Inscreva-se</span>
+      </a>
+    
+  </li>
+</ul>
+
+      </div>
+    </div>
+
+    <div class="canvas">
+      <div class="wrapper">
+        
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      
+        <p class="site-title">
+          <a href="/">
+            
+            <span>Angelo Salton</span>
+          </a>
+        </p>
+      
+    </div>
+  </div>
+</header>
+
+        <div class="initial-content">
+          <header class="intro">
+  
+
+  <div class="inner">
+    <div class="intro-text">
+      <h1 id="page-title" class="intro-title">Explorando a Penn World Table com R e shiny
+</h1>
+      
+
+      
+        
+
+        <p class="entry-meta">
+          <span class="byline-item">by Angelo Salton</span><span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="379 72 16 16"><g><g><path fill="none" d="M380.8,86.7h12.3v-8.8h-12.3V86.7z M389.5,78.8h1.7v1.4h-1.7V78.8z M389.5,81.3h1.7v1.4h-1.7V81.3z M389.5,83.8h1.7v1.4h-1.7V83.8z M386.1,78.8h1.7v1.4h-1.7V78.8z M386.1,81.3h1.7v1.4h-1.7V81.3z M386.1,83.8h1.7v1.4h-1.7V83.8z M382.8,78.8h1.7v1.4h-1.7V78.8z M382.8,81.3h1.7v1.4h-1.7V81.3z M382.8,83.8h1.7v1.4h-1.7V83.8z"/><polygon fill="none" points="384.7 75.1 383.4 75.1 383.4 74.3 380.8 74.3 380.8 76.6 393.2 76.6 393.2 74.3 390.6 74.3 390.6 75.1 389.3 75.1 389.3 74.3 384.7 74.3"/><rect x="382.8" y="78.8" width="1.7" height="1.4"/><rect x="386.1" y="78.8" width="1.7" height="1.4"/><rect x="389.5" y="78.8" width="1.7" height="1.4"/><rect x="382.8" y="81.3" width="1.7" height="1.4"/><rect x="386.1" y="81.3" width="1.7" height="1.4"/><rect x="389.5" y="81.3" width="1.7" height="1.4"/><rect x="382.8" y="83.8" width="1.7" height="1.4"/><rect x="386.1" y="83.8" width="1.7" height="1.4"/><rect x="389.5" y="83.8" width="1.7" height="1.4"/><path d="M383.4,72v1.1h-3.8V88h14.9V73.1h-3.8V72h-1.3v1.1h-4.7V72H383.4z M393.2,86.7h-12.3v-8.8h12.3L393.2,86.7L393.2,86.7z M389.3,74.3v0.8h1.3v-0.8h2.5v2.3h-12.3v-2.3h2.5v0.8h1.3v-0.8H389.3z"/></g></g></svg></span><time datetime="2017-04-13T00:00:00+00:00">April 13, 2017</time></span> <span class="byline-item"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="15 309.7 16 16"><g><path d="M23.9 315.1v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h1.8z"/><path d="M30.1 317.7c.5 3.9-2.3 7.5-6.2 7.9-3.9.5-7.5-2.3-7.9-6.2-.5-3.9 2.3-7.5 6.2-7.9v-1.8H24v1.8c1.1.1 2.7.7 3.5 1.4l1.3-1.3 1.3 1.3-1.3 1.3c.5.9 1.2 2.5 1.3 3.5zm-1.8.9c0-2.9-2.4-5.3-5.3-5.3s-5.3 2.4-5.3 5.3 2.4 5.3 5.3 5.3 5.3-2.3 5.3-5.3z"/></g></svg></span>3 min. de leitura</span>
+        </p>
+      
+
+      
+
+      
+    </div>
+  </div>
+</header>
+
+
+<main id="main" class="page-content" aria-label="Content">
+  <div class="inner">
+    <article class="entry-wrap">
+      <div class="entry-content">
+        <p>A Penn World Table é uma base de dados que contém variáveis relevantes de desenvolvimento econômico para países ao redor do mundo. Esse post apresenta uma construção em <em>shiny</em>, um pacote que possibilita desenvolver aplicações web a partir do R. O objetivo foi montar uma ferramenta para comparar países visualmente, com dados anuais de 1980 a 2014.</p>
+
+<p>O código-fonte:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w"> </span><span class="c1"># para manipular os dados</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">shiny</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">plotly</span><span class="p">)</span><span class="w"> </span><span class="c1"># pacote com opções de gráficos</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">pwt9</span><span class="p">)</span><span class="w"> </span><span class="c1"># carrega a Penn World Table 9</span><span class="w">
+
+</span><span class="n">pwt</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">pwt9.0</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+  </span><span class="n">filter</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="m">1980</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># dando nomes aos bois</span><span class="w">
+</span><span class="n">colnames</span><span class="p">(</span><span class="n">pwt</span><span class="p">)[</span><span class="m">5</span><span class="o">:</span><span class="m">47</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"Expenditure-side real GDP at chained PPPs (in mil. 2011US$)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Output-side real GDP at chained PPPs (in mil. 2011US$)"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Population (in millions)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Number of persons engaged (in millions)"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Average annual hours worked by persons engaged"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Human capital index, based on years of schooling and returns to education; see Human capital in PWT9."</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Real consumption of households and government, at current PPPs (in mil. 2011US$)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Real domestic absorption, (real consumption plus investment), at current PPPs (in mil. 2011US$)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Expenditure-side real GDP at current PPPs (in mil. 2011US$)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Output-side real GDP at current PPPs (in mil. 2011US$)"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Capital stock at current PPPs (in mil. 2011US$)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"TFP level at current PPPs (USA=1)"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Welfare-relevant TFP levels at current PPPs (USA=1)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Real GDP at constant 2011 national prices (in mil. 2011US$)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Real consumption at constant 2011 national prices (in mil. 2011US$)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Real domestic absorption at constant 2011 national prices (in mil. 2011US$)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Capital stock at constant 2011 national prices (in mil. 2011US$)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"TFP at constant national prices (2011=1)"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Welfare-relevant TFP at constant national prices (2011=1)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Share of labour compensation in GDP at current national prices"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Average depreciation rate of the capital stock"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Exchange rate, national currency/USD (market+estimated)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Price level of CCON (PPP/XR), price level of USA GDPo in 2011=1"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Price level of CDA (PPP/XR), price level of USA GDPo in 2011=1"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Price level of CGDPo (PPP/XR),  price level of USA GDPo in 2011=1"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"0/1/2: relative price data for consumption, investment and government is extrapolated (0), benchmark (1) or interpolated (2)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"0/1/2: relative price data for exports and imports is extrapolated (0), benchmark (1) or interpolated (2)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"0/1: the exchange rate is market-based (0) or estimated (1)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"0/1: the observation on pl_gdpe or pl_gdpo is not an outlier (0) or an outlier (1)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Correlation between expenditure shares of the country and the US (benchmark observations only)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Statistical capacity indicator (source: World Bank, developing countries only)"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Share of household consumption at current PPPs"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Share of gross capital formation at current PPPs"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Share of government consumption at current PPPs"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Share of merchandise exports at current PPPs"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Share of merchandise imports at current PPPs"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Share of residual trade and GDP statistical discrepancy at current PPPs"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Price level of household consumption,  price level of USA GDPo in 2011=1"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Price level of capital formation,  price level of USA GDPo in 2011=1"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Price level of government consumption,  price level of USA GDPo in 2011=1"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Price level of exports, price level of USA GDPo in 2011=1"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Price level of imports, price level of USA GDPo in 2011=1"</span><span class="p">,</span><span class="w"> 
+                         </span><span class="s2">"Price level of the capital stock, price level of USA in 2011=1"</span><span class="w">
+</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># INTERFACE -----------------------</span><span class="w">
+</span><span class="n">ui</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">fluidPage</span><span class="p">(</span><span class="w">
+   
+   </span><span class="c1"># Título</span><span class="w">
+   </span><span class="n">titlePanel</span><span class="p">(</span><span class="s2">"Penn World Table 9"</span><span class="p">),</span><span class="w">
+   
+   </span><span class="c1"># Barra lateral</span><span class="w">
+   </span><span class="n">sidebarLayout</span><span class="p">(</span><span class="w">
+      </span><span class="n">sidebarPanel</span><span class="p">(</span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w">
+        </span><span class="n">selectInput</span><span class="p">(</span><span class="n">inputId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"vars"</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Variable"</span><span class="p">,</span><span class="w"> </span><span class="n">choices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">colnames</span><span class="p">(</span><span class="n">pwt</span><span class="p">)[</span><span class="m">5</span><span class="o">:</span><span class="m">47</span><span class="p">]),</span><span class="w">
+        </span><span class="n">selectInput</span><span class="p">(</span><span class="n">inputId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"year"</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Year"</span><span class="p">,</span><span class="w"> </span><span class="n">choices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unique</span><span class="p">(</span><span class="n">pwt</span><span class="o">$</span><span class="n">year</span><span class="p">),</span><span class="w"> </span><span class="n">selected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2014</span><span class="p">)</span><span class="w">
+      </span><span class="p">),</span><span class="w">
+      </span><span class="c1"># Show a plot</span><span class="w">
+      </span><span class="n">mainPanel</span><span class="p">(</span><span class="w">
+         </span><span class="n">plotlyOutput</span><span class="p">(</span><span class="s2">"plot"</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"600px"</span><span class="p">)</span><span class="w">
+      </span><span class="p">)</span><span class="w">
+   </span><span class="p">)</span><span class="w">
+</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># SERVER ---------------------</span><span class="w">
+</span><span class="n">server</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="n">output</span><span class="p">){</span><span class="w">
+  
+  </span><span class="c1"># database update</span><span class="w">
+  </span><span class="n">pw</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">reactive</span><span class="p">({</span><span class="w">
+    </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">pwt</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">filter</span><span class="p">(</span><span class="n">year</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">input</span><span class="o">$</span><span class="n">year</span><span class="p">)</span><span class="w">
+    </span><span class="nf">return</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w">
+  </span><span class="p">})</span><span class="w">
+  
+  </span><span class="c1"># light grey boundaries</span><span class="w">
+  </span><span class="n">l</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toRGB</span><span class="p">(</span><span class="s2">"grey"</span><span class="p">),</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span><span class="w">
+  
+  </span><span class="c1"># specify pwt projection/options</span><span class="w">
+  </span><span class="n">g</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="w">
+    </span><span class="n">showframe</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w">
+    </span><span class="n">showcoastlines</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w">
+    </span><span class="n">projection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Mercator'</span><span class="p">)</span><span class="w">
+  </span><span class="p">)</span><span class="w">
+  
+  </span><span class="n">output</span><span class="o">$</span><span class="n">plot</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">renderPlotly</span><span class="p">({</span><span class="w">
+  </span><span class="n">plot_geo</span><span class="p">(</span><span class="n">pw</span><span class="p">())</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+    </span><span class="n">add_trace</span><span class="p">(</span><span class="w">
+      </span><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">get</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">vars</span><span class="p">),</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">get</span><span class="p">(</span><span class="n">input</span><span class="o">$</span><span class="n">vars</span><span class="p">),</span><span class="w"> </span><span class="n">colors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'Blues'</span><span class="p">,</span><span class="w">
+      </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">country</span><span class="p">,</span><span class="w"> </span><span class="n">locations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">~</span><span class="n">isocode</span><span class="p">,</span><span class="w"> </span><span class="n">marker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">line</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">)</span><span class="w">
+    </span><span class="p">)</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w">
+      </span><span class="n">layout</span><span class="p">(</span><span class="n">geo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span><span class="p">)</span><span class="w">
+  </span><span class="p">})</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="c1"># Run the application </span><span class="w">
+</span><span class="n">shinyApp</span><span class="p">(</span><span class="n">ui</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ui</span><span class="p">,</span><span class="w"> </span><span class="n">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">server</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p><a href="https://salton.shinyapps.io/pwtmap/">Acesse aqui para ver o resultado.</a></p>
+
+      </div>
+      
+    </article>
+  </div>
+</main>
+
+        </div>
+
+        <div class="search-content">
+          <div class="inner">
+  <div tabindex="-1" class="search-searchbar"></div>
+        <div class="search-hits"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer" class="site-footer">
+  <div class="inner">
+    <div class="copyright">
+      
+        <p>&copy; 2019 Angelo Salton.</p>
+      
+    </div>
+  </div>
+</footer>
+
+    
+
+<script async src="/assets/javascripts/main.js"></script>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3.3/dist/instantsearch-theme-algolia.min.css">
+
+<script>
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: 'QB6HVGBSBA',
+  apiKey: '9d5014e5bbc77372547bce778dfa5663',
+  indexName: 'basically-basic',
+  searchParameters: {
+    restrictSearchableAttributes: [
+      'title',
+      'content'
+    ]
+  }
+});
+
+const hitTemplate = function(hit) {
+  const url = hit.url;
+  const title = hit._highlightResult.title.value;
+  const content = hit._highlightResult.html.value;
+
+  return `
+    <article class="entry">
+      <h3 class="entry-title"><a href="${url}">${title}</a></h3>
+      <div class="entry-excerpt">${content}</div>
+    </article>
+  `;
+}
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '.search-searchbar',
+    poweredBy: true,
+    placeholder: 'Enter your search term...'
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '.search-hits',
+    templates: {
+      item: hitTemplate
+    }
+  })
+);
+
+// Starting the search
+search.start();
+</script>
+
+
+
+  </body>
+
+</html>
