@@ -4,7 +4,6 @@ tags:
   - Python
   - scikit-learn
 ---
-# Introduction
 
 In this notebook I will attempt to predict automobile prices using Python and its data analysis and machine learning packages such as `pandas` and `scikit-learn`. Forecasting car prices can be useful for businesses in general: insurance companies can use this information to calculate their premia; websites and enterprises can provide estimates even when asking prices are not available in a specific application; enterprises can set contracts where a car's resale value must be defined _a priori_ with greater information, or determine if a car is overvalued or undervalued with respect to the market.
 

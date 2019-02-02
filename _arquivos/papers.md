@@ -3,6 +3,8 @@ title: "Publicações"
 layout: page
 ---
 
+Esta é uma lista das minhas produções acadêmicas.
+
 # Artigos publicados
 
 [SALTON, A.; ELY, R. A. Uncertainty and growth: evidence of emerging and developed countries. Economics Bulletin, v. 37, n. 2, p. 1274–1280.](http://www.accessecon.com/includes/CountdownloadPDF.aspx?PaperID=EB-16-00684)

@@ -5,7 +5,7 @@ layout: page
 
 Este é uma seleção de aplicativos de produtividade para o desktop, com exemplos de uso. São em geral programas de terminal Linux, mas que podem ser usados no Windows sem problemas, seja por versões nativas ou com o [Windows Subsystem for Linux](http://wsl-guide.org/en/latest/).
 
-[**pandoc**](pandoc.org) - Conversor de arquivos de texto para uma série de formatos, como Word, LaTeX, Markdown, HTML.
+[**pandoc**](http://pandoc.org/) - Conversor de arquivos de texto para uma série de formatos, como Word, LaTeX, Markdown, HTML.
 
 ```bash
 $ pandoc -f latex -t docx arquivo.tex

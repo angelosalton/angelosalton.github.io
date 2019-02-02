@@ -4,8 +4,6 @@ tags:
   - Python
 ---
 
-# Introdução
-
 Aqui veremos uma análise de dados financeiros e de performance de uma empresa fictícia, para mostrar as capacidades de análise e visualização de dados no Python, através dos pacotes [pandas](https://pandas.pydata.org/) e [matplotlib](https://matplotlib.org/). A empresa possui os seguintes dados:
 
 - *Visitas*: Base de quantas visitas temos no site, separadas por departamento, produto e região do país
