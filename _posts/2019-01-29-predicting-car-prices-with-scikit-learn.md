@@ -1627,9 +1627,9 @@ First, let's identify the scope of our problem. Our target, `price`, is continuo
 
 My theoretical model is currently specified as (simplified):
 
-$price_i = model_i + year_i + features_i + error_i$
+$$price_i = model_i + year_i + features_i + error_i$$
 
-In a regression context, this means that all auto models depreciate at a rate determined by the coefficient associated with $year$. However, one would expect each model to lose value at a different rate (i.e. luxury, fuel-efficient or low-maintenance cars would preserve their value for longer). We can implement this by interacting features $model$ and $year$, that is, $price_i = modelyear_i + features_i + error_i$. The downside of this approach is that it may lead to overfitting.
+In a regression context, this means that all auto models depreciate at a rate determined by the coefficient associated with $$year$$. However, one would expect each model to lose value at a different rate (i.e. luxury, fuel-efficient or low-maintenance cars would preserve their value for longer). We can implement this by interacting features $$model$$ and $$year$$, that is, $$price_i = modelyear_i + features_i + error_i$$. The downside of this approach is that it may lead to overfitting.
 
 Let's load the `scikit-learn` methods:
 
@@ -1729,7 +1729,7 @@ for model in models:
       "10 in version 0.20 to 100 in 0.22.", FutureWarning)
     
 
-Let's take a look at the model $R^2$ scores (more is better), mean squared error and median absolute error (less is better):
+Let's take a look at the model $$R^2$$ scores (more is better), mean squared error and median absolute error (less is better):
 
 
 ```python
@@ -1753,7 +1753,7 @@ ax3.set_ylabel('Median absolute error')
 ![png](/assets/images/mlcars/output_66_1.png)
 
 
-All model scores are calculated using regression residuals, so they are correlated. The $R^2$ score in most models performed at around 0.8, except the elastic net model, which peaked at 0.5 in the training set. Gradient boosting, random forest and extra trees had the best scores. However, $R^2$ scores should be taken with precaution as they are biased towards larger models. Mean squared error (MSE) is a metric that penalizes larger prediction errors. Last are the median absolute error (MAE). Absolute error measures are interesting because they inform average deviations in terms of our target (predicted car prices, in our case).
+All model scores are calculated using regression residuals, so they are correlated. The $$R^2$$ score in most models performed at around 0.8, except the elastic net model, which peaked at 0.5 in the training set. Gradient boosting, random forest and extra trees had the best scores. However, $$R^2$$ scores should be taken with precaution as they are biased towards larger models. Mean squared error (MSE) is a metric that penalizes larger prediction errors. Last are the median absolute error (MAE). Absolute error measures are interesting because they inform average deviations in terms of our target (predicted car prices, in our case).
 
 I'll stick with the random forest regressor, as it was less prone to overfitting in previous tests.
 
