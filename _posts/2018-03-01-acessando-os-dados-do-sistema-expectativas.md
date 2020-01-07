@@ -46,3 +46,4 @@ bcbexpect_annual <- function(variables = "Mediana", start_date, end_date, ... ){
 ```
 A função deve retornar um data frame com as variáveis de interesse, a data em que as projeções foram coletadas, o horizonte de previsão e os números em si. É possível fazer consultas que caracterizam toda a distribuição de frequência dos dados que se queira analisar.
 
+_P.S.: Essa funcionalidade foi incluída no pacote [BETS](https://github.com/nmecsys/BETS), mantido pelo pessoal do IBRE/FGV._
