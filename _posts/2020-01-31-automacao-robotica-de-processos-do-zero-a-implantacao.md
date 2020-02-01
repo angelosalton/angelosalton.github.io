@@ -1,9 +1,10 @@
 ---
-title: 'Automação robótica de processos: do zero à implantação'*
+title: 'Automação robótica de processos: do zero à implantação'
 tags:
   - RPA
-comments: true
 ---
+
+# Introdução
 
 Neste post, vou comentar desafios e experiências pessoais que tive na implantação de uma solução de automação robótica de processos (conhecida também pelo seu acrônimo em inglês, RPA) em uma empresa de grande porte. 
 
