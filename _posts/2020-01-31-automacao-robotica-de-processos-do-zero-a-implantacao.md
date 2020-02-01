@@ -4,8 +4,6 @@ tags:
   - RPA
 ---
 
-# Introdução
-
 Neste post, vou comentar desafios e experiências pessoais que tive na implantação de uma solução de automação robótica de processos (conhecida também pelo seu acrônimo em inglês, RPA) em uma empresa de grande porte. 
 
 Em várias empresas de maior porte, ou mais tradicionais, existem políticas e processos bem definidos para as atividades centrais. Na minha experiência, dois fatores foram chave para o andamento
