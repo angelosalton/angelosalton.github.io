@@ -13,6 +13,7 @@ Em várias empresas de maior porte, ou mais tradicionais, existem políticas e p
 O ponto de partida foi identificar, através do contato com analistas de processo e pela convivência com o _workflow_ diário dos colegas, processos com maior potencial de retorno com automação. Evidentemente, processos frequentes, altamente repetitivos e com regras de negócio simples acabam sendo os principais candidatos.
 
 ![](https://imgs.xkcd.com/comics/is_it_worth_the_time.png)
+
 Fonte: xkcd
 
 Neste caso, a tarefa é a de entrada de dados cadastrais de fornecedores na solução de ERP da empresa. O processo tem uma boa dose de trabalho manual e conferências, além de dados não-estruturados e por vezes inconsistentes. Além disso, toda a comunicação sobre o processo se dá por e-mail. Avaliamos que para facilitar a tarefa de automação seria necessário tornar o processo mais ágil, e com informações centralizadas ("single source of truth"). Assim, criamos um *database* de solicitações de cadastro e mudamos o formulário de cadastro para que o solicitante possa consultar o status de determinado processo, diminuindo a comunicação por e-mail.
