@@ -39,14 +39,14 @@
 }
 
 .intro-title {
-  @include fluid-type($min-vw, $max-vw, 26px, 80px);
+  @include fluid-type($min-vw, $max-vw, 26px, 26px);
   margin-bottom: 1rem;
   color: tint($text-color, 25%);
   line-height: 1;
 }
 
 .intro-subtitle {
-  @include fluid-type($min-vw, $max-vw, 18px, 28px);
+  @include fluid-type($min-vw, $max-vw, 18px, 20px);
   font-style: italic;
 }
 
@@ -62,6 +62,6 @@
 
   > p:first-child {
     font-size: 1.125em;
-    line-height: 1.625;
+    line-height: 1.5;
   }
 }
