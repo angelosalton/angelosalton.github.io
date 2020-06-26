@@ -5,6 +5,14 @@ layout: page
 
 Esta é uma lista das minhas produções acadêmicas.
 
+# Trabalhos de conclusão
+
+[Monografia: Governança corporativa, risco e retorno de ações no Brasil](/assets/files/pdf/monografia.pdf)
+
+[Dissertação: Incerteza e crescimento econômico: evidências em países emergentes e desenvolvidos.](/assets/files/pdf/dissertacao.pdf)
+
+[Tese: Impacts of microeconomic uncertainty shocks: an analysis for Brazil.](/assets/files/pdf/tese.pdf)
+
 # Artigos publicados
 
 [SALTON, A.; ELY, R. A. Uncertainty and growth: evidence of emerging and developed countries. *Economics Bulletin*, v. 37, n. 2, p. 1274–1280.](http://www.accessecon.com/includes/CountdownloadPDF.aspx?PaperID=EB-16-00684)
@@ -13,13 +21,11 @@ Esta é uma lista das minhas produções acadêmicas.
 
 # Working Papers
 
-[Setores centrais nas redes de produção da economia brasileira, com Ian M. Trotter.](/assets/files/pdf/prodnetworks.pdf)
+[SALTON, A., WOLF, R., TROTTER, I. M. Setores centrais nas redes de produção da economia brasileira.](/assets/files/pdf/prodnetworks.pdf)
 
-[Transmissão assimétrica de preços no mercado brasileiro de etanol, com Leonardo B. de Mattos.](/assets/files/pdf/combustiveis.pdf)
+[SALTON, A., MATTOS, L. B. Transmissão assimétrica de preços no mercado brasileiro de etanol.](/assets/files/pdf/combustiveis.pdf)
 
-[Uncertainty spillovers in Brazilian industry.](/assets/files/pdf/sectors.pdf)
-
-[Fatores associados ao empreendedorismo na América, com João Eustáquio de Lima.](/assets/files/pdf/empreend.pdf)
+[SALTON, A., LIMA, J. E. Fatores associados ao empreendedorismo na América Latina.](/assets/files/pdf/empreend.pdf)
 
 # Replicar
 
