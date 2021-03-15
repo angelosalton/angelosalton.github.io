@@ -32,4 +32,4 @@ minhas redes.
 </div>
 {% endfor %}
 
-<a class="button is-primary" href="/posts">Mais posts</a>
+<a class="button is-primary" href="/posts.html">Mais posts</a>
