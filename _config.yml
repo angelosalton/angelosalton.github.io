@@ -32,7 +32,8 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-theme: bulma-clean-theme
+#theme: bulma-clean-theme
+remote_theme: chrisrhymes/bulma-clean-theme
 
 markdown: kramdown
 highlighter: rouge
