@@ -1,5 +1,6 @@
 ---
 title: Análise de dados financeiros com pandas e matplotlib
+layout: post
 tags:
   - Python
 ---

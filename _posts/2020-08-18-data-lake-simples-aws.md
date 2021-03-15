@@ -1,5 +1,6 @@
 ---
 title: Um data lake simples com Amazon Web Services
+layout: post
 tags:
   - AWS
   - Python

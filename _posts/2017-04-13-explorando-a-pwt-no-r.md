@@ -1,5 +1,6 @@
 ---
 title: Explorando a Penn World Table com R e shiny
+layout: post
 tags:
   - R
 ---

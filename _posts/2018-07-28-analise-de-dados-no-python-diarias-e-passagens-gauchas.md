@@ -1,5 +1,6 @@
 ---
 title: "Análise de dados no Python: Diárias e passagens gaúchas"
+layout: post
 tags:
   - Python
 ---

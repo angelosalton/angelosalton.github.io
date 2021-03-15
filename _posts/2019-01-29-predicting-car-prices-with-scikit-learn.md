@@ -1,5 +1,6 @@
 ---
 title: Predicting car prices with scikit-learn
+layout: post
 tags:
   - Python
   - scikit-learn

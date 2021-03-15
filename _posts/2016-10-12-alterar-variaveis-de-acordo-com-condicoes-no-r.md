@@ -1,6 +1,6 @@
 ---
-author: Angelo Salton
 title: Alterar variáveis de acordo com condições no R
+layout: post
 tags:
   - R
 comments: true

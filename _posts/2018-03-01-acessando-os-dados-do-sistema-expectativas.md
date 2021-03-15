@@ -1,5 +1,6 @@
 ---
 title: Acessando os dados do Sistema Expectativas do Bacen no R
+layout: post
 tags:
   - R
 ---

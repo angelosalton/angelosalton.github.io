@@ -2,17 +2,21 @@
 layout: default
 ---
 
-{% include page-intro.html %}
+<div class="tags">
+  {% for tag in page.tags %}
+  {% include tag.html tag=tag %}
+  {% endfor %}
+</div>
 
-<main id="main" class="page-content" aria-label="Content">
-  <div class="inner">
-    <article class="entry-wrap">
-      <div class="entry-content">
-        {{ content }}
-      </div>
-      {% if site.disqus.shortname %}
-        {% include disqus_comments.html %}
-      {% endif %}
-    </article>
-  </div>
-</main>
+<div class="content">
+    <p>Publicado em {{ page.date | date: "%b %-d, %Y" }}</p>
+    {{ content }}
+</div>
+
+{% unless site.hide_share_buttons %}
+{% include share-buttons.html %}
+{% endunless %}
+
+{% if site.disqus.shortname %}
+  {% include disqus.html %}
+{% endif %}

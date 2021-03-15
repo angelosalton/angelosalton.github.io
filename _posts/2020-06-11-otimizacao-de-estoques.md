@@ -1,5 +1,7 @@
 ---
 title: Uma formulação matemática simples para otimização de estoques
+author: Angelo
+layout: post
 tags:
   - Python
   - Optimization

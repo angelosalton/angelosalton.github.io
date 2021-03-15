@@ -1,5 +1,6 @@
 ---
 title: Visualizando fluxos de turistas ao Brasil com o Tableau
+layout: post
 tags:
   - Tableau
 ---

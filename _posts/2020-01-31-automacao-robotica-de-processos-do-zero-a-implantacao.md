@@ -1,5 +1,6 @@
 ---
 title: 'Automação robótica de processos: do zero à implantação'
+layout: post
 tags:
   - RPA
 ---
