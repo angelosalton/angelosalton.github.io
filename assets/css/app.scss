@@ -7,5 +7,26 @@ $family-sans-serif: BlinkMacSystemFont, -apple-system, "Fira Sans", "Segoe UI", 
 $family-monospace: 'Fira Code', monospace;
 $primary: #339ca1;
 
+table {
+  font-size: small;
+}
+
+pre {
+  font-family: $family-monospace;
+}
+
+nav, section, footer {
+  font-family: $family-sans-serif;
+}
+
+.navbar-brand {
+  font-size: large;
+  font-weight: bold;
+}
+
+a:any-link {
+  color: $primary;
+}
+
 // Import Main CSS file from theme
 @import "main";
