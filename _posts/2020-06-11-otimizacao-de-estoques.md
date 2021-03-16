@@ -1,5 +1,5 @@
 ---
-title: Uma formulação matemática simples para otimização de estoques
+title: Uma formulação matemática para otimização de estoques
 author: Angelo
 layout: post
 tags:

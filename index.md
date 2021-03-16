@@ -6,9 +6,9 @@ layout: page
 hero_image: /assets/images/bg.jpg
 ---
 
-# Bem-vindo!
+<h1 class="title">Bem-vindo!</h1>
 
-Esta é a minha página pessoal. Na barra superior você pode encontrar outras informações de contato. Abaixo, links das
+Esta é a minha página pessoal. Economia é a minha área de atuação, com ênfase em inteligência de mercado e análise de dados. Na barra superior você pode encontrar outros artigos e informações de contato. Abaixo, links para as
 minhas redes.
 
 <a class="button is-light"
@@ -16,8 +16,8 @@ minhas redes.
     class="fas fa-user-tie"></i>&nbsp; Curriculum Vitae</a>
 <a class="button is-light" href="https://www.linkedin.com/in/angelo-salton"><i class="fab fa-linkedin"></i>&nbsp;
   LinkedIn</a>
-<a class="button is-light" href="https://instagram.com/salton.a"><i class="fab fa-instagram"></i>&nbsp; Instagram</a>
 <a class="button is-light" href="https://github.com/angelosalton/"><i class="fab fa-github"></i>&nbsp; GitHub</a>
+<a class="button is-light" href="https://instagram.com/salton.a"><i class="fab fa-instagram"></i>&nbsp; Instagram</a>
 <a class="button is-light" href="https://soundcloud.com/salton1"><i class="fab fa-soundcloud"></i>&nbsp; Soundcloud</a>
 
 # Últimos posts
