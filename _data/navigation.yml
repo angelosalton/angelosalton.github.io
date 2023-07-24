@@ -1,0 +1,15 @@
+- name: CV
+  link: /assets/files/pdf/cv.pdf
+  icon: fas fa-briefcase
+- name: Blog
+  link: /blog/
+  icon: fas fa-newspaper
+- name: Mídia
+  link: /midia/
+  icon: fas fa-star
+- name: Pesquisa
+  link: /pesquisa/
+  icon: fas fa-search
+- name: Hobbies
+  link: /hobbies/
+  icon: fas fa-palette

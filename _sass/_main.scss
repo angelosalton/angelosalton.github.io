@@ -1,0 +1,24 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
+$family-sans-serif: 'Fira Sans', sans-serif;
+$primary: #6595c2 !default;
+$info: #da9f63;
+$body-size: 14px;
+
+$tabs-link-active-color: $primary;
+$tabs-link-active-border-bottom-color: $primary;
+
+$modal-content-width: 800px;
+
+@import "../node_modules/bulma/bulma.sass";
+$hero-darken: $dark !default;
+
+@import "layout";
+@import "syntax";
+@import "showcase";
+@import "../node_modules/bulma-block-list/src/block-list.scss";
+
+.gh-sponsor {
+  color: #ea4aaa;
+}
