@@ -24,7 +24,6 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://angelosalton.com.br" # the base hostname & protocol for your site, e.g. http://example.com
 lang: pt
 github_username: angelosalton
-google_analytics: UA-83226740-2
 
 # Build settings
 # theme: bulma-clean-theme
