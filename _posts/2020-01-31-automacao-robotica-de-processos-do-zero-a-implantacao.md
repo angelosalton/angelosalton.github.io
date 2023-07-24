@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 'Automação robótica de processos: do zero à implantação'
 tags:
   - RPA

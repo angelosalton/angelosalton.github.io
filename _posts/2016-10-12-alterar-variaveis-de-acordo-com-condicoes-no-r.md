@@ -1,5 +1,5 @@
 ---
-author: Angelo Salton
+layout: post
 title: Alterar variáveis de acordo com condições no R
 tags:
   - R

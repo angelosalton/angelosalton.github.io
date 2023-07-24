@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Webinar IHS Markit: Mercado brasileiro de fertilizantes"
 tags:
   - IHS Markit

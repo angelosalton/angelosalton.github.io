@@ -7,20 +7,22 @@ layout: default
       <a href="/blog" class="button is-primary"><i class="fas fa-step-backward"></i>&nbsp;Voltar</a>
     </p>
 
-    <p>Publicado em {{ page.date | date: "%-d %b %Y" }}</p>
+    <p><b>Publicado em {{ page.date | date: "%-d %b %Y" }}</b></p>
 
     {% if page.series %}
         {% include series.html %}
     {% endif %}
 
+    <div class="tags">
+      {% for tag in page.tags %}
+        {% include tag.html tag=tag %}
+      {% endfor %}
+    </div>
+
     {{ content }}
 </div>
 
-<div class="tags">
-    {% for tag in page.tags %}
-      {% include tag.html tag=tag %}
-    {% endfor %}
-</div>
+
 
 {% unless site.hide_share_buttons %}
 {% include share-buttons.html %}

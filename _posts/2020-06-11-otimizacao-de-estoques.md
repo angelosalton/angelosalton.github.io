@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Uma formulação matemática simples para otimização de estoques
 tags:
   - Python

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 'Slides interativos com reveal-js'
 tags: web
 ---

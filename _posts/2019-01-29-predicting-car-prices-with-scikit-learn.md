@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Predicting car prices with scikit-learn
 tags:
   - Python
