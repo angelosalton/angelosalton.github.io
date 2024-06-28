@@ -1,15 +1,13 @@
 ---
 layout: page
-title: Mídia
+title: Na mídia
 permalink: /midia/
 hide_hero: true
 ---
 
-# Na mídia
-
 ## Kellen Severo: Tendências do mercado de fertilizantes
 
-[Bate papo com a jornalista referência em agricultura, sobre o cenário externo e perspectivas para a indústria de fertilizantes em 2022. **Clique para acessar.**](https://www.youtube.com/watch?v=4KO10_gZK5Q)
+[Bate papo com a jornalista referência em agricultura, sobre o cenário externo e perspectivas para a indústria de fertilizantes em 2022.](https://www.youtube.com/watch?v=4KO10_gZK5Q)
 
 ## Agrishow: Como lidar com as incertezas do mercado externo
 
