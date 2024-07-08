@@ -3,7 +3,7 @@
  */
 .site-header {
   // border-top: 5px solid $grey-color-dark;
-  border-bottom: 2px solid $brown;
+  // border-bottom: 2px solid $brown;
   min-height: $spacing-unit * 1.865;
 
   // Positioning context for the mobile navigation icon
@@ -106,8 +106,9 @@
  * Site footer
  */
 .site-footer {
-  border-top: 1px solid $grey-color-light;
+  // border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
+  line-height: normal;
 }
 
 .footer-heading {
@@ -117,6 +118,7 @@
 
 .contact-list,
 .social-media-list {
+  text-align: center;
   list-style: none;
   margin-left: 0;
 }
@@ -124,6 +126,7 @@
 .footer-col-wrapper {
   @include relative-font-size(0.9375);
   color: $grey-color;
+  text-align: center;
   margin-left: -$spacing-unit / 2;
   @extend %clearfix;
 }
