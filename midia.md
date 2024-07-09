@@ -1,15 +1,17 @@
 ---
 layout: page
-title: Mídia
+title: Na mídia
 permalink: /midia/
 hide_hero: true
 ---
 
-# Na mídia
+## TFI T3 Conference
+
+[Apresentação sobre o mercado global de enxofre, com ênfase no cenário logístico. Realizado em New Orleans/EUA.](https://eweb.tfi.org/eweb/DynamicPage.aspx?webcode=EventInfo&Reg_evt_key=dfd6a297-d880-4217-b10c-4c710eab9679)
 
 ## Kellen Severo: Tendências do mercado de fertilizantes
 
-[Bate papo com a jornalista referência em agricultura, sobre o cenário externo e perspectivas para a indústria de fertilizantes em 2022. **Clique para acessar.**](https://www.youtube.com/watch?v=4KO10_gZK5Q)
+[Bate papo com a jornalista referência em agricultura, sobre o cenário externo e perspectivas para a indústria de fertilizantes em 2022.](https://www.youtube.com/watch?v=4KO10_gZK5Q)
 
 ## Agrishow: Como lidar com as incertezas do mercado externo
 

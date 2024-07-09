@@ -26,10 +26,7 @@ lang: pt
 github_username: angelosalton
 
 # Build settings
-# theme: bulma-clean-theme
-# theme_color: '#333333'
-# With GitHub Pages Gem
-remote_theme: chrisrhymes/bulma-clean-theme
+theme: minima
 
 paginate: 20
 paginate_path: "/blog/page:num"

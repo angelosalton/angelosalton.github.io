@@ -1,21 +1,38 @@
-<footer class="footer">
-    <div class="container">
-        
-        {% if site.footer_menu %}
-        <div class="columns is-multiline">
-            {% for item in site.data[site.footer_menu] %}
-            <div class="column has-text-centered">
-                <div>
-                    <a href="{{ item.link | relative_url }}" class="link">{{ item.name }}</a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        {% endif %}
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
-        <div class="content is-small has-text-centered">
-            <p class="">₢ 2023 Angelo Salton.</a></p>
-            <p class="">Tema por <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
-        </div>
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">{{ site.title | escape }}</h2> -->
+
+    <div class="footer-col-wrapper">
+      <p>♦</p>
+      <p>© {{ site.time | date: '%Y' }} {{ site.title | escape }} [ˈɐ̃.ʒɨ.ɫu saɫ.ˈton]</p>
+      <div>
+        <p>subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+        <!-- <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+            </li>
+            {%- if site.email -%}
+            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {%- endif -%}
+        </ul> -->
+      </div>
+
+      <!-- <div class="footer-col footer-col-2">
+        {%- include social.html -%}
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{- site.description | escape -}}</p>
+      </div> -->
     </div>
+
+  </div>
+
 </footer>

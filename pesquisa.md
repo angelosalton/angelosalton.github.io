@@ -5,8 +5,6 @@ permalink: /pesquisa/
 hide_hero: true
 ---
 
-# Pesquisa
-
 ## Trabalhos de conclusão
 
 [Monografia: Governança corporativa, risco e retorno de ações no Brasil](/assets/files/pdf/monografia.pdf)

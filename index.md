@@ -4,13 +4,14 @@
 
 layout: page
 title: Bem-vindo!
-hero_image: /assets/images/bg.jpg
 ---
 
 Esta é a minha página pessoal! Na barra superior você pode encontrar outros links e informações de contato.
 
+Sou doutor em Economia pela [UFV](https://der.ufv.br/) e tenho experiência em mercados de insumos agrícolas. Atualmente sou analista de commodities (ácido sulfúrico) na [S&P Global Commodity Insights](https://www.spglobal.com/commodityinsights/en/products-services/agriculture/sulphuric-acid-outlook).
+
 <p>
-    <a class="button is-primary" href="/assets/files/pdf/cv.pdf"><i class="fas fa-briefcase"> Curriculum Vitae</i></a>
-    <a class="button is-primary" href="https://www.linkedin.com/in/angelo-salton/"><i class="fab fa-linkedin"> LinkedIn</i></a>
-    <a class="button is-primary" href="https://www.github.com/angelosalton/"><i class="fab fa-github"> GitHub</i></a>
+    <a class="button is-primary" href="/assets/files/pdf/cv.pdf">👔 Curriculum Vitae</a>
+    <a class="button is-primary" href="https://www.linkedin.com/in/angelo-salton/">💼 LinkedIn</a>
+    <a class="button is-primary" href="https://www.github.com/angelosalton/">💻 GitHub</a>
 </p>
