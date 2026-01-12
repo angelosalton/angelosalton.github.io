@@ -8,7 +8,7 @@ title: Bem-vindo!
 
 Esta é a minha página pessoal! Na barra superior você pode encontrar outros links e informações de contato.
 
-Sou doutor em Economia pela [UFV](https://der.ufv.br/) e tenho experiência em mercados de insumos agrícolas. Atualmente sou analista de commodities (ácido sulfúrico) na [S&P Global Commodity Insights](https://www.spglobal.com/commodityinsights/en/products-services/agriculture/sulphuric-acid-outlook).
+Sou doutor em Economia pela [UFV](https://der.ufv.br/) e tenho desenvolvido minha carreira em inteligência de mercado em insumos agrícolas, mineração e indústria química. Atualmente sou analista de commodities (ácido sulfúrico) na [S&P Global Energy](https://www.spglobal.com/en/research-insights/experts/salton-angelo).
 
 <p>
     <a class="button is-primary" href="/assets/files/pdf/cv.pdf">👔 Curriculum Vitae</a>
